@@ -229,15 +229,15 @@ number of walks of length $k$ from $v$ to $w$. \qed
 
 The directory \texttt{lean/} is a Lake project (toolchain \texttt{leanprover/lean4:v4.33.1},
 Mathlib tag \texttt{v4.33.1}, revision \texttt{0df444a360eaa60ab8c11dca51a86af692955474}).
-\begin{center}\small
+\begin{center}\footnotesize
 \begin{tabular}{@{}ll@{}}
 \toprule
 File & Content\\
 \midrule
 \texttt{Submission/DetLeaf.lean} & Lemma~\ref{lem:det}: \texttt{TLMC3718.det\_leaf}\\
-\texttt{Submission/MatchingPoly.lean} & definitions; Lemma~\ref{lem:mu}: \texttt{SimpleGraph.matchingPolyIn\_leaf}\\
-\texttt{Submission/Leaf.lean} & Lemma~\ref{lem:leaf}: \texttt{SimpleGraph.IsAcyclic.exists\_leaf\_in}\\
-\texttt{Submission/Charpoly.lean} & Lemma~\ref{lem:charp}, Theorem~\ref{thm:A}: \texttt{SimpleGraph.matchingPolynomial\_eq\_charpoly}\\
+\texttt{Submission/MatchingPoly.lean} & definitions; Lemma~\ref{lem:mu}: \texttt{matchingPolyIn\_leaf}\\
+\texttt{Submission/Leaf.lean} & Lemma~\ref{lem:leaf}: \texttt{IsAcyclic.exists\_leaf\_in}\\
+\texttt{Submission/Charpoly.lean} & Lemma~\ref{lem:charp}; Theorem~\ref{thm:A}: \texttt{matchingPolynomial\_eq\_charpoly}\\
 \texttt{Submission/Main.lean} & Theorem~\ref{thm:main}: \texttt{TLMC3718.conjecture\_00000003718}\\
 \texttt{Submission/Verification.lean} & \texttt{\#print axioms} of every result\\
 \bottomrule
@@ -245,7 +245,7 @@ File & Content\\
 \end{center}
 
 \paragraph{Definitions.} For \texttt{G : SimpleGraph V} with \texttt{[Fintype V] [DecidableEq V]
-[DecidableRel G.Adj]} and \texttt{s : Finset V}:
+[DecidableRel G.Adj]} and \texttt{s : Finset V} (all in namespace \texttt{SimpleGraph}):
 \begin{lstlisting}
 def IsMatchingIn (s : Finset V) (M : Finset (Sym2 V)) : Prop :=
   M @$\subseteq$@ G.edgeFinset @$\wedge$@ (@$\forall$@ e @$\in$@ M, @$\forall$@ x, x @$\in$@ e @$\to$@ x @$\in$@ s) @$\wedge$@
