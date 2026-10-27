@@ -210,18 +210,18 @@ harmless linter note about a \texttt{<;>} combinator.
 \begin{enumerate}
 \item Exact computation and robustness (Python 3, Fractions only):
 \begin{lstlisting}
-cd /Users/nihao/Projects/tlmc-work/batch/00000002118
-/Users/nihao/Projects/tlmc-work/venv/bin/python check.py
-/Users/nihao/Projects/tlmc-work/venv/bin/python convention_check.py
+cd LibertychaserUS_submission_20261027064839
+python3 check.py
+python3 convention_check.py
 \end{lstlisting}
 \item Lean verification:
 \begin{lstlisting}
-cd /Users/nihao/Projects/tlmc-work/template
-lake env lean /Users/nihao/Projects/tlmc-work/batch/00000002118/Disproof.lean
+cd lean
+lake exe cache get \&\& lake build
 \end{lstlisting}
 \item This report:
 \begin{lstlisting}
-cd /Users/nihao/Projects/tlmc-work/batch/00000002118 && tectonic report.tex
+cd LibertychaserUS_submission_20261027064839 && tectonic report.tex
 \end{lstlisting}
 \end{enumerate}
 
