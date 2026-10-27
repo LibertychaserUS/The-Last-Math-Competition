@@ -93,7 +93,7 @@ and at $h=(0,7/2,4)$ they read $7/2=1+7/6+4/3$ and $4=1+7/5+8/5$, both true. Hen
 
 \subsection*{Computer check}
 
-The script \texttt{check.py} (venv Python, exact \texttt{fractions.Fraction}, Gauss-Jordan elimination) computes $\pi$ by solving $\pi P=\pi$, computes $\mathbb{E}_x[T_x^+]$ from the hitting-time system, cross-checks every hitting time against the fundamental matrix $Z=(I-P+\Pi)^{-1}$ via $\mathbb{E}_i[T_j]=(Z_{jj}-Z_{ij})/\pi_j$, and reports the gap with numpy for display. Its output for $P_0$, and for 8 further chains (a non-reversible 3-state chain, a periodic chain, and six seeded random positive chains), is:
+The script \texttt{check.py} (Python 3, exact \texttt{fractions.Fraction}, Gauss-Jordan elimination) computes $\pi$ by solving $\pi P=\pi$, computes $\mathbb{E}_x[T_x^+]$ from the hitting-time system, cross-checks every hitting time against the fundamental matrix $Z=(I-P+\Pi)^{-1}$ via $\mathbb{E}_i[T_j]=(Z_{jj}-Z_{ij})/\pi_j$, and reports the gap with numpy for display. Its output for $P_0$, and for 8 further chains (a non-reversible 3-state chain, a periodic chain, and six seeded random positive chains), is:
 
 \begin{quote}\ttfamily\footnotesize
 == P0 (scanner's chain) (n=3) gap=0.766667\\
@@ -108,7 +108,7 @@ In all nine chains and all states the exact difference $\mathbb{E}_x[T_x^+]-1/\p
 
 \section{Lean formalization}
 
-The file \texttt{Disproof.lean} (path: /Users/nihao/Projects/tlmc-work/batch/00000005399/Disproof.lean) imports Mathlib, compiles with Lean 4.33.1 against Mathlib v4.33.1 with no errors and no warnings, and contains no \texttt{sorry}, \texttt{native\_decide}, axioms of its own, or \texttt{unsafe}/\texttt{opaque}/\texttt{extern}/\texttt{implemented\_by}/\texttt{admit}.
+The file \texttt{Disproof.lean} (in \texttt{lean/}) imports Mathlib, compiles with Lean 4.33.1 against Mathlib v4.33.1 with no errors and no warnings, and contains no \texttt{sorry}, \texttt{native\_decide}, axioms of its own, or \texttt{unsafe}/\texttt{opaque}/\texttt{extern}/\texttt{implemented\_by}/\texttt{admit}.
 
 \subsection*{Definitions and correspondence}
 
@@ -334,9 +334,9 @@ end TLMC5399
 \section{Reproduction}
 
 \begin{enumerate}
-\item Verifier: \texttt{cd /Users/nihao/Projects/tlmc-work/batch/00000005399 \&\& /Users/nihao/Projects/tlmc-work/venv/bin/python check.py}. Exit code 0; output as in Section 3.
-\item Lean: \texttt{cd /Users/nihao/Projects/tlmc-work/template \&\& lake env lean /Users/nihao/Projects/tlmc-work/batch/00000005399/Disproof.lean}. Expected: the two \texttt{\#print axioms} lines and no errors.
-\item Report: \texttt{cd /Users/nihao/Projects/tlmc-work/batch/00000005399 \&\& tectonic report.tex}, which produces \texttt{report.pdf}.
+\item Verifier: \texttt{cd LibertychaserUS\_submission\_20261027065051 \&\& python3 check.py}. Exit code 0; output as in Section 3.
+\item Lean: \texttt{cd lean \&\& lake exe cache get \&\& lake build}. Expected: the two \texttt{\#print axioms} lines and no errors.
+\item Report: \texttt{cd LibertychaserUS\_submission\_20261027065051 \&\& tectonic report.tex}, which produces \texttt{report.pdf}.
 \end{enumerate}
 
 \end{document}
