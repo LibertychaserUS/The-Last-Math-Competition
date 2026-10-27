@@ -191,12 +191,12 @@ radius clause, which is the substantive assertion of the conjecture.
 
 \begin{enumerate}
 \item Numerical and exact checks: \texttt{python3 check.py} in
-\texttt{/Users/nihao/Projects/tlmc-work/batch/00000007468/}. Expected: all assertions pass; the verdict block
+\texttt{LibertychaserUS\_submission\_20261027064413/}. Expected: all assertions pass; the verdict block
 prints $r(W)=1\neq 2=\limsup w_k$.
-\item Lean disproof: \texttt{cd /Users/nihao/Projects/tlmc-work/template} then
-\texttt{lake env lean /Users/nihao/Projects/tlmc-work/batch/00000007468/Disproof.lean}. Expected: no errors, and the
+\item Lean disproof: \texttt{cd lean} then
+\texttt{lake exe cache get \&\& lake build}. Expected: no errors, and the
 \texttt{\#print axioms} line above.
-\item This report: \texttt{cd /Users/nihao/Projects/tlmc-work/batch/00000007468} then \texttt{tectonic report.tex}.
+\item This report: \texttt{cd LibertychaserUS\_submission\_20261027064413} then \texttt{tectonic report.tex}.
 \end{enumerate}
 
 \end{document}
