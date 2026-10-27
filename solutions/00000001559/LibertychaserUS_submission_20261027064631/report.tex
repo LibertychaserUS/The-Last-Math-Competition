@@ -134,17 +134,17 @@ The file contains no \texttt{sorry}, \texttt{native\_decide}, \texttt{axiom}, \t
 \begin{enumerate}
   \item Verifier (about two minutes, mainly the random-restart search):
   \begin{lstlisting}
-cd /Users/nihao/Projects/tlmc-work/batch/00000001559
-/Users/nihao/Projects/tlmc-work/venv/bin/python check.py
+cd LibertychaserUS_submission_20261027064631
+python3 check.py
   \end{lstlisting}
   \item Lean (Lean v4.33.1, Mathlib v4.33.1):
   \begin{lstlisting}
-cd /Users/nihao/Projects/tlmc-work/template
-lake env lean /Users/nihao/Projects/tlmc-work/batch/00000001559/Disproof.lean
+cd lean
+lake exe cache get \&\& lake build
   \end{lstlisting}
   \item Report:
   \begin{lstlisting}
-cd /Users/nihao/Projects/tlmc-work/batch/00000001559
+cd LibertychaserUS_submission_20261027064631
 tectonic report.tex
   \end{lstlisting}
 \end{enumerate}
